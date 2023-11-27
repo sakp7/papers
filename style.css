@@ -12,20 +12,20 @@ body .Logo_section {
 }
 
 body .Logo_section .anurag {
-  width: 100%;
-  max-width: 150px;
-  height: auto;
-	position:absolute;
-top:0;
-left:0;
-}
-body .Logo_section .avishkaran{
-  width: 100%;
-  max-width: 150px;
+  width: 70%;
+  max-width: 100px;
   height: auto;
 	position:absolute;
 top:0;
 right:0;
+}
+body .Logo_section .avishkaran{
+  width: 70%;
+  max-width: 100px;
+  height: auto;
+	position:absolute;
+top:0;
+left:0;
 
 
 }
