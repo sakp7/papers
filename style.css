@@ -1,0 +1,78 @@
+body {
+  background-color: #faf3f3;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+body .Logo_section {
+  display: flex;
+  justify-content: space-around; /* Adjust spacing between logos */
+  align-items: center;
+  padding: 20px;
+}
+body .Logo_section .avishkaran,
+body .Logo_section .anurag {
+  width: 100%;
+  max-width: 150px;
+  height: auto;
+}
+body .main-logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+body .main-logo-container .main-logo {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  margin-right: 170px; /* Move the main logo 70px to the left */
+}
+body .tagline {
+  text-align: center;
+}
+body .tagline h1 {
+  margin-left: 70px;
+  font-size: 1.5em;
+  color: black; /* Darker color for better readability */
+}
+body .buttongroup {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly; /* Equal spacing between buttons */
+  padding: 20px;
+  margin-top: 70px;
+}
+body .buttongroup button {
+  background-color: black; /* Darker background color */
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 30px;
+  margin: 10px;
+  font-size: 1.5em;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Smooth transition on hover */
+}
+body .buttongroup button:hover {
+  background-color: #555; /* Darker color on hover */
+}
+
+@media screen and (max-width: 768px) {
+  .Logo_section,
+  .main-logo-container,
+  .tagline,
+  .buttongroup {
+    padding: 10px;
+  }
+  .buttongroup {
+    width: 100%; /* Full width on smaller screens */
+    justify-content: center; /* Center buttons on smaller screens */
+  }
+  .buttongroup button {
+    width: 80%; /* Adjust button width for better spacing on smaller screens */
+  }
+  .main-logo {
+    margin-right: 0; /* Reset margin for smaller screens */
+  }
+}/*# sourceMappingURL=style.css.map */

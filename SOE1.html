@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School of Engineering</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+    
+        .header {
+            text-align: center;
+            padding: 20px 0;
+        }
+    
+        .container {
+            text-align: center;
+            margin-top: 20px;
+        }
+    
+        .dropdown {
+            display: inline-block;
+            margin: 10px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+    
+        .dropdown select {
+            padding: 8px;
+            font-size: 16px;
+            border: none;
+            outline: none;
+            background-color: #000;
+            color: #fff;
+            border-radius: 10px;
+        }
+    
+        #output {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        table {
+            width: 80%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background-color: #fff; /* Set table background color */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+        }
+    
+        th, td {
+            padding: 15px;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+    
+        th {
+            background-color: #333; /* Set header cell background color */
+            color: #fff; /* Set header cell text color */
+        }
+    
+        tr:hover {
+            background-color: #f5f5f5; /* Set hover effect color */
+        }
+    
+        a {
+            text-decoration: none;
+            color: #007bff; /* Set link color */
+        }
+    
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    
+    
+    
+</head>
+<body>
+    <div class="header">
+        <h1>School of Engineering</h1>
+    </div>
+
+    <div class="container">
+    <div class="dropdown" style="float:left">
+        <select id="branch" onchange="updateOutput()">
+            <option value="">Select Branch</option>
+            <option value="CSE">CSE</option>
+            <option value="IT">IT</option>
+            <option value="ECE">ECE</option>
+            <option value="EEE">EEE</option>
+            <option value="AI">AI</option>
+            <option value="AIML">AIML</option>
+            <option value="CS">CS</option>
+            <option value="DS">DS</option>
+            <option value="MECH">MECH</option>
+            <option value="CHEM">CHEM</option>
+            <option value="CIVIL">CIVIL</option>
+            <!-- Add more branch options as needed -->
+        </select>
+    </div>
+
+    <div class="dropdown" style="float:right">
+        <select id="year" onchange="updateOutput()">
+            <option value="">Select Year</option>
+            <option value="1st">1st</option>
+            <option value="2nd">2nd</option>
+            <option value="3rd">3rd</option>
+            <option value="4th">4th</option>
+        </select>
+    </div>
+    </div>
+    <div id="output"></div>
+
+    <!-- <script>
+        function updateOutput() {
+            var branch = document.getElementById("branch").value;
+            var year = document.getElementById("year").value;
+
+            var outputDiv = document.getElementById("output");
+
+            if (branch && year) {
+                outputDiv.innerHTML = "<p>Hi! You selected " + branch + " in Year " + year + ".</p>";
+            } else {
+                outputDiv.innerHTML = "";
+            }
+        }
+    </script> -->
+
+    <script>
+        function updateOutput() {
+            var branch = document.getElementById("branch").value;
+            var year = document.getElementById("year").value;
+    
+            var outputDiv = document.getElementById("output");
+    
+            if (branch && year) {
+                // Example data for the table, replace this with your actual data
+                var tableData = [
+                    { subject: "Subject 1", mid1: "link_mid1_1.pdf", mid2: "link_mid2_1.pdf", mid3: "link_mid3_1.pdf", semester: "link_semester_1.pdf", supplementary: "link_supplementary_1.pdf" },
+                    { subject: "Subject 2", mid1: "link_mid1_2.pdf", mid2: "link_mid2_2.pdf", mid3: "link_mid3_2.pdf", semester: "link_semester_2.pdf", supplementary: "link_supplementary_2.pdf" },
+                    // Add more rows as needed
+                ];
+    
+                // Create a table element
+                var table = document.createElement("table");
+                table.border = "1";
+    
+                // Create header row
+                var headerRow = table.insertRow(0);
+                var headers = ["Subject Name", "Mid1", "Mid2", "Mid3", "Semester", "Supplementary"];
+    
+                for (var i = 0; i < headers.length; i++) {
+                    var headerCell = headerRow.insertCell(i);
+                    headerCell.innerHTML = headers[i];
+                }
+    
+                // Populate table with data
+                for (var i = 0; i < tableData.length; i++) {
+                    var row = table.insertRow(i + 1);
+                    var cell1 = row.insertCell(0);
+                    var cell2 = row.insertCell(1);
+                    var cell3 = row.insertCell(2);
+                    var cell4 = row.insertCell(3);
+                    var cell5 = row.insertCell(4);
+                    var cell6 = row.insertCell(5);
+    
+                    cell1.innerHTML = tableData[i].subject;
+                    cell2.innerHTML = `<a href="${tableData[i].mid1}" target="_blank">Download</a>`;
+                    cell3.innerHTML = `<a href="${tableData[i].mid2}" target="_blank">Download</a>`;
+                    cell4.innerHTML = `<a href="${tableData[i].mid3}" target="_blank">Download</a>`;
+                    cell5.innerHTML = `<a href="${tableData[i].semester}" target="_blank">Download</a>`;
+                    cell6.innerHTML = `<a href="${tableData[i].supplementary}" target="_blank">Download</a>`;
+                }
+    
+                // Replace existing content with the table
+                outputDiv.innerHTML = "";
+                outputDiv.appendChild(table);
+            } else {
+                // Clear output if branch or year is not selected
+                outputDiv.innerHTML = "";
+            }
+        }
+    </script>
+    
+    
+</body>
+</html>
