@@ -12,9 +12,10 @@ body .Logo_section {
 }
 body .Logo_section .avishkaran,
 body .Logo_section .anurag {
-  width: 100%;
+  width: 50%;
   max-width: 150px;
   height: auto;
+  
 }
 body .main-logo-container {
   display: flex;
