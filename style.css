@@ -10,13 +10,30 @@ body .Logo_section {
   align-items: center;
   padding: 20px;
 }
-body .Logo_section .avishkaran,
+
 body .Logo_section .anurag {
-  width: 50%;
+  width: 100%;
   max-width: 150px;
   height: auto;
-  
+	position:absolute;
+top:0;
+left:0;
 }
+body .Logo_section .avishkaran{
+  width: 100%;
+  max-width: 150px;
+  height: auto;
+	position:absolute;
+top:0;
+right:0;
+
+
+}
+
+
+
+
+
 body .main-logo-container {
   display: flex;
   justify-content: center;
